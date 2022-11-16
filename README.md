@@ -1,0 +1,5 @@
+This fund me contract allows people to fund collective good. so people can send native BC token to the contract and only the owner can withdraw it.
+Then we use chainlink's price feed to convert eth price to usd and allows the funders to fund in the USD, the min USD they can send is 50$
+As we know the interfaces have some fns and not implemented and they are called interfaces, if we compile this we can get the actual abi of the contract, bcoz it defines all the diff ways that we can interact with the contract.
+The safemath will warn us about the max int size and the tx will fail, solc 0.8.0 version add this warning (overflow or underflow)
+To withdraw we can use either one of these transfer, call, send. (in solidity in order to send native token (eth) we can only work with payable kw) The method we will use is "call"
