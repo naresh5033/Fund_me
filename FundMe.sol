@@ -67,15 +67,18 @@ contract FundMe {
     //receive()  fallback()
 
     fallback() external payable {
-        fund();
+        fund(); //these special fns can't ve an arg and the fn kw, can't return anuthin and must ve an external visibility and payable state mutability
     }
 
-    receive() external payable {
-        fund();
-    }
+    receive() external payable { //whenever we send eth, and make a tx with this contract as long as no data associated with this fn it will get triggered
+        fund(); //the receive fn get trigered anytime we send a tx to this sc and we don't specify a dont specify a fn and we keep the call data blank
+    }// if we ve any val in the call data then it will not trigerred, 
 
+    //in our case since we ve the fallback and any call data with val will look for the fallback(), not the recerive()
+    
 }
 
+//if we send money to this sc (thru wallet) w/o calling the fund (), 
 
 
 
